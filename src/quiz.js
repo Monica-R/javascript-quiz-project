@@ -45,4 +45,23 @@ class Quiz {
         if (this.currentQuestionIndex < this.questions.length) return false;
         if (this.currentQuestionIndex === this.questions.length) return true;
     }
+
+    filterQuestionsByDifficulty(difficulty) {
+        console.log(difficulty);
+        if (difficulty < 1 || difficulty > 3) {
+            return;
+        }
+        if (typeof difficulty === "string") return;
+        const filteredQuestions = this.questions.filter( question => question.difficulty === difficulty);
+        this.questions = filteredQuestions;
+        return this.questions;
+    }
+    averageDifficulty() {
+        if (this.questions.length === 0) return 0; // If don't have questions, return 0
+
+        const totalDifficulty = this.questions.reduce((sum, question) => sum + question.difficulty, 0);
+        return totalDifficulty / this.questions.length;
+    }
 }
+
+    
