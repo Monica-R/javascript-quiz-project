@@ -33,14 +33,16 @@ class Quiz {
 
     // 5. checkAnswer(answer)
     checkAnswer(answer) {
-        console.log(this.questions);
         this.questions.forEach((question) => {
-
-            if (this.questions.answer === answer) {
+            if (question.answer === answer) {
                 this.correctAnswers++;
             }
         });
     }
 
     // 6. hasEnded()
+    hasEnded() {
+        if (this.currentQuestionIndex < this.questions.length) return false;
+        if (this.currentQuestionIndex === this.questions.length) return true;
+    }
 }
