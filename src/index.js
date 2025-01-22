@@ -94,16 +94,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
 
-    // YOUR CODE HERE:
-    //
-    // 1. Show the question
-    // Update the inner text of the question container element and show the question text
+// YOUR CODE HERE:
+//
+// 1. Show the question
+// Update the inner text of the question container element and show the question text
+const questionHTML = document.querySelector('#question');
+const questionChoices = document.querySelector('#choices');
+questionChoices.setAttribute('class', 'question-item');
+questionHTML.setAttribute('class', 'question');
+let arrayQuestionOptions = question.choices;
+questionHTML.textContent = question.text;
+arrayQuestionOptions.forEach(option => {
+  questionChoices.innerHTML += `
+  <li>
+    <input type="radio" value="${option}"/>
+    <label for="${option}">${option}</label>
+  <li>
+  `;
+});
 
-    
-    // 2. Update the green progress bar
-    // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
-    
-    progressBar.style.width = `65%`; // This value is hardcoded as a placeholder
+
+
+// 2. Update the green progress bar
+// Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
+
+progressBar.style.width = `65%`; // This value is hardcoded as a placeholder
 
 
 
