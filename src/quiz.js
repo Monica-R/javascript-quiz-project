@@ -47,7 +47,6 @@ class Quiz {
     }
 
     filterQuestionsByDifficulty(difficulty) {
-        console.log(difficulty);
         if (difficulty < 1 || difficulty > 3) {
             return;
         }
