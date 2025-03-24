@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timer);
         showResults();
       }
-    }, 100);
+    }, 1000);
   }
 
   setTimer();
